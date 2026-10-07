@@ -9,7 +9,7 @@ while read -r url; do
   [[ -z "$url" || "$url" == \#* ]] && continue
   ok=0
   for try in 1 2 3; do
-    code=$(curl -s -o /dev/null -m 20 -L -w '%{http_code}' "$url" || echo 000)
+    code=$(curl -s -o /dev/null -m 20 -L -w '%{http_code}' "$url" || true)
     [[ "$code" =~ ^[23] ]] && { ok=1; break; }
     sleep 10
   done

@@ -1,0 +1,5 @@
+# Uma URL por linha. Linhas com # são ignoradas.
+https://www.srcompanytechsolutions.com
+https://coruja.srcompanytechsolutions.com
+https://financiamentostueppriegel.srcompanytechsolutions.com
+https://safeguardlgpd.cloud

@@ -1,0 +1,39 @@
+name: uptime
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uptime
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restaurar estado anterior
+        uses: actions/cache/restore@v4
+        with:
+          path: state
+          key: uptime-state-none
+          restore-keys: uptime-state-
+
+      - name: Checar sites
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT: ${{ secrets.TG_CHAT }}
+        run: ./check.sh
+
+      - name: Salvar estado
+        uses: actions/cache/save@v4
+        with:
+          path: state
+          key: uptime-state-${{ github.run_id }}

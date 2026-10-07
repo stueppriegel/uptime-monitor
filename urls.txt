@@ -1,5 +1,5 @@
-# Uma URL por linha. Linhas com # são ignoradas.
-https://www.srcompanytechsolutions.com
-https://coruja.srcompanytechsolutions.com
-https://financiamentostueppriegel.srcompanytechsolutions.com
-https://safeguardlgpd.cloud
+# Formato: Nome|URL   (linhas com # são ignoradas)
+SRC Tech (site institucional)|https://www.srcompanytechsolutions.com
+Sr. Coruja|https://coruja.srcompanytechsolutions.com
+Meu Financiamento|https://financiamentostueppriegel.srcompanytechsolutions.com
+Safeguard LGPD|https://safeguardlgpd.cloud

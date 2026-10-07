@@ -51,7 +51,7 @@ done < "$URLS_FILE"
 # 2) novos problemas
 while IFS='|' read -r url code since name; do
   grep -qF "$url|" state/down.txt && continue
-  send "🔴 <b>Site fora do ar</b>
+  send "🔴 <b>SITE INDISPONÍVEL</b>
 ━━━━━━━━━━━━━━
 <b>${name}</b>
 🌐 $(host_of "$url")
@@ -63,7 +63,7 @@ done < state/now.txt
 while IFS='|' read -r url code since name; do
   grep -qF "$url|" state/now.txt && continue
   name=${name:-$(host_of "$url")}
-  send "🟢 <b>Site restabelecido</b>
+  send "🟢 <b>SITE RESTABELECIDO</b>
 ━━━━━━━━━━━━━━
 <b>${name}</b>
 🌐 $(host_of "$url")

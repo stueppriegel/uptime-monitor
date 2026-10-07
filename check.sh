@@ -54,7 +54,7 @@ while IFS='|' read -r url code since name; do
   send "🔴 <b>SITE INDISPONÍVEL</b>
 ━━━━━━━━━━━━━━
 <b>${name}</b>
-🌐 $(host_of "$url")
+🌐 <a href="${url}">$(host_of "$url")</a>
 ⚠️ HTTP ${code} · $(describe "$code")
 🕐 Detectado em $(fmt_ts "$since")"
 done < state/now.txt
@@ -66,7 +66,7 @@ while IFS='|' read -r url code since name; do
   send "🟢 <b>SITE RESTABELECIDO</b>
 ━━━━━━━━━━━━━━
 <b>${name}</b>
-🌐 $(host_of "$url")
+🌐 <a href="${url}">$(host_of "$url")</a>
 ⏱ Ficou fora por $(fmt_dur $((now-since)))
 🕐 Normalizado em $(fmt_ts "$now")"
 done < state/down.txt
